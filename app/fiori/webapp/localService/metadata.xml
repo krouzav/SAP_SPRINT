@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="SGCService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Response" EntityType="SGCService.Response"/>
+                <EntitySet Name="Screen" EntityType="SGCService.Screen"/>
+            </EntityContainer>
+            <EntityType Name="Response">
+                <Property Name="tcode" Type="Edm.String"/>
+                <Property Name="event" Type="Edm.String"/>
+                <Property Name="value" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Screen">
+                <Property Name="title" Type="Edm.String"/>
+                <Property Name="btn1_text" Type="Edm.String"/>
+                <Property Name="btn2_text" Type="Edm.String"/>
+                <Property Name="scr_type" Type="Edm.String"/>
+                <Property Name="scr_texts" Type="Edm.String"/>
+            </EntityType>
+            <Annotations Target="SGCService.EntityContainer/Response">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.ReadRestrictions">
+                    <Record Type="Capabilities.ReadRestrictionsType">
+                        <PropertyValue Property="Readable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SGCService.EntityContainer/Screen">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
