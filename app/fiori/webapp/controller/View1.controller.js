@@ -1,6 +1,14 @@
 // sap.ui.define([
 //     "sap/ui/core/mvc/Controller"
 // ],
+
+const GET = (url) => axios.get('/Sgc'+url)
+const POST = (cmd,data) => axios.post('/Sgc'+cmd,data)
+
+//KROV test to delete
+//const data = GET('/Screen')
+//console.log(data)
+
 sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel"
 ],
     /**
