@@ -1,0 +1,1 @@
+using SGCService as service from '../../srv/sgc-service';
