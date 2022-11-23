@@ -6,7 +6,7 @@
 POST http://localhost:4004/sgc/Response
 Content-Type: application/json
 
-{"tcode": "I001", "event": "NEXT", "value": "100"}
+{"tcode": "I001", "event": "NEXT", "value": "120"}
 
 ###
 #

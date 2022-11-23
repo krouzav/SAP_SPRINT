@@ -15,12 +15,40 @@ module.exports = (srv) => {
 
     processEvent(iv_event, iv_value) {
       // test process
+  
       this.scr_type = "";
       this.scr_texts = "";
-      if (iv_value <= 100) {
-
+      if (iv_event == "NEXT") {
+        switch (this.stepno) {
+          case 10:
+            this.stepno += 10;
+            this.matnr = iv_value;
+            break;
+          case 20:
+            if (iv_value <= 100) {
+              this.scr_type = "E";
+              this.scr_texts = "Value " + iv_value + " is not greather than 100";
+            }
+            else {
+              this.menge = iv_value;
+              this.scr_texts = 
+              this.stepno += 10;
+            }
+            break;
+          case 30:
+            this.scr_type = "S";
+            this.scr_texts = "Material " + this.matnr 
+                 + " with quantity " + this.menge + " processed successfully.";
+            this.stepno = 10;
+            break;
+        }
       }
       else {
+        if (this.stepno > 10) {
+          this.stepno -= 10;
+        }
+      }
+      /*
         switch (iv_event) {
           case "NEXT":
             if (this.stepno < 30) {
@@ -33,8 +61,8 @@ module.exports = (srv) => {
             }
             break;
         }
-      }
-      this.buildScreen();
+        */
+        this.buildScreen();
     }
 
     buildScreen() {
@@ -43,13 +71,19 @@ module.exports = (srv) => {
       this.screen_btn2_text = "NEXT";
       switch (this.stepno) {
         case 10:
-          this.screen_title = '1.Title';
+          this.screen_title = 'Enter material';
           break;
         case 20:
-          this.screen_title = '2.Title';
+          this.screen_title = 'Enter quantity greather than 100';
+          if (this.scr_texts != ""){
+            this.scr_texts += "\n";
+          }
+          this.scr_texts += "Material: " + this.matnr;
           break;
         case 30:
-          this.screen_title = '3.Title';
+          this.screen_title = 'Confirm process?';
+          this.scr_texts = "Material: " + this.matnr 
+                         + ", Qunatity:" + this.menge;
           break;
       }
     }
@@ -86,6 +120,8 @@ module.exports = (srv) => {
     gv_screen_title = go_sgc.screen_title;
     gv_screen_btn1_text = go_sgc.screen_btn1_text;
     gv_screen_btn2_text = go_sgc.screen_btn2_text;
+    gv_screen_type = go_sgc.scr_type;
+    gv_screen_texts = go_sgc.scr_texts;
     //return req.error (400, resp.event);
   })
 
