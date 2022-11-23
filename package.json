@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.102.12",
-    "sqlite3": "^5.0.4"
+    "sqlite3": "^5.1.2"
   },
   "scripts": {
     "start": "cds run",
@@ -47,5 +47,15 @@
   },
   "sapux": [
     "app/fiori"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db/my-bookshop.db"
+        }
+      }
+    }
+  }
 }
