@@ -6,7 +6,7 @@ entity Response {
     value : String;
 }
 
-entity Screen{
+entity Screen {
     title: String;
     btn1_text: String;
     btn2_text: String;

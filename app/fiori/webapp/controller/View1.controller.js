@@ -1,13 +1,17 @@
 // sap.ui.define([
 //     "sap/ui/core/mvc/Controller"
 // ],
-
-const GET = (url) => axios.get('/Sgc'+url)
 const POST = (cmd,data) => axios.post('/Sgc'+cmd,data)
+const GET = (url) => axios.get('/Sgc'+url)
 
-//KROV test to delete
-//const data = GET('/Screen')
-//console.log(data)
+const postData = POST('/Response',{
+    "tcode":"I01T",
+    "event": "BACK",
+    "value":"123"
+});
+const getData = GET('/Screen');
+let oModel;
+//console.log(getData)
 
 sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel"
 ],
@@ -19,16 +23,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel"
 
         return Controller.extend("ns.fiori.controller.View1", {
             onInit: function () {
-
+                const that = this
+                //oModel.oData["viewData"] = []
+                getData.then(function(result) {
+                    const data = result.data.value[0];
+                    oModel = new sap.ui.model.json.JSONModel(data);
+                    that.getView().setModel(oModel)
+                }); 
             },
             onNext(){
-                // post 
-                var that = this;
-                this.getView().getModel().submitBatch("SalesOrderUpdateGroup").then(function(){
-                    if (!that.byId("mySimpleForm").getBindingContext().getBinding().hasPendingChanges()){
-                        // raise success message
-                    }
-                });
+                // post first then get -> new data 
+                console.log(this.getView().getModel());
+                console.log(this.getView().byId("btnNext"));
             },
             onBack(){
                 // post 

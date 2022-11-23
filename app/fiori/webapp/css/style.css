@@ -1,1 +1,19 @@
 /* Enter your custom styles here */
+.btnBox{
+    padding: 1rem;
+}
+.inp{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.label{
+    
+}
+.footer{
+    border: solid red 1px;
+}
+.txts{
+    border: solid red 1px;
+    padding: 2rem;
+    margin-left: 2rem;
+}
