@@ -1,0 +1,28 @@
+
+###
+#
+# Send User event Next
+#
+POST http://localhost:4004/sgc/Response
+Content-Type: application/json
+
+{"tcode": "I001", "event": "NEXT", "value": "100"}
+
+###
+#
+# Send User event Back
+#
+POST http://localhost:4004/sgc/Response
+Content-Type: application/json
+
+{"tcode": "I001", "event": "BACK", "value": "123"}
+
+
+###
+#
+# Get current Screen info
+#
+GET http://localhost:4004/sgc/Screen?
+  # &$select=title
+  # &$expand=currency
+  # &sap-language=de
