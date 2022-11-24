@@ -83,7 +83,7 @@ module.exports = (srv) => {
         case 30:
           this.screen_title = "Confirm process?";
           this.scr_texts =
-            "Material: " + this.matnr + ", Qunatity:" + this.menge;
+            "Material: " + this.matnr + "\nQunatity:" + this.menge;
           break;
       }
     }
