@@ -22,7 +22,7 @@
                 <Button class="btns" id="btnNext" text="{/btn2_text}" press="onNext" width="4rem"/>
             </HBox>
             <Input id="inp" class="inp" width="100%"/>
-            <VBox id="textBox" height="auto" class="txts">
+            <VBox id="textBox" width="90%" height="auto" class="txts">
                 <Label id="txt" class="txt" text="{/scr_texts}"/> 
             </VBox>
         </VBox>
