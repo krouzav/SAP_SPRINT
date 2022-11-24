@@ -1,4 +1,7 @@
 module.exports = (srv) => {
+
+  const cds = require('@sap/cds')
+  
   class sgcCore {
     constructor(iv_tcode) {
       this.tcode = iv_tcode;
@@ -6,6 +9,17 @@ module.exports = (srv) => {
     }
 
     setFirstStep() {
+      //KROV TEST
+      let params = SELECT.from('sgc.Params').where({ tcode:'I01T' })
+
+      let paramsData = cds.run(params)
+
+      paramsData.then(function(result) {
+        const data = result;
+        console.log(data[0].tcode)
+    });
+    //END TEST DATA 
+
       // test data
       this.stepno = 10;
       this.buildScreen();

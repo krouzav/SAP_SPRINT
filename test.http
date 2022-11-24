@@ -26,3 +26,9 @@ GET http://localhost:4004/sgc/Screen?
   # &$select=title
   # &$expand=currency
   # &sap-language=de
+
+###
+GET http://localhost:4004/sgc/Params(tcode='I01T',stepno=10)  
+
+###
+GET http://localhost:4004/sgc/Params 
