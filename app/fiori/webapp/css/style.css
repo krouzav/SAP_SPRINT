@@ -3,12 +3,12 @@ html{
     box-sizing: border-box;
 }
 .label{
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', sans-serif;
 }
 .btnBox{
-    margin-top: 2rem;
-    padding-top: 1rem;
+    margin-top: 1rem;
     padding-bottom: 2rem;
 }
 .sapUiSizeCompact .sapMInputBaseContentWrapper {
@@ -46,19 +46,23 @@ html{
     margin: 1rem;
     font-size: large;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 .txt{
-    font-size: larger;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', sans-serif;
 }
 .sapMInputBaseInner {
     font-size: 2rem;
+    border: 1px solid red;
+    border-radius: 5px;
 
 }
 .sapUiSizeCompact .sapMInputBase {
     line-height: 1rem;
     height: 4rem;
     padding: 1rem;
+    
 }
 
 .sapUiSizeCompact .sapMInputBaseContentWrapper {
@@ -71,10 +75,13 @@ html{
 .hidden{
     display: none;
 }
-.icon{
+.footer-icon{
     font-size : 3rem;
     color: white;
 }
-.footer{
-    background-color: #60c85bd3;
+.footerGreen{
+    background-color: #64b622;
+}
+.footerRed{
+    background-color: #bd1111d3;
 }
