@@ -1,8 +1,8 @@
 // sap.ui.define([
 //     "sap/ui/core/mvc/Controller"
 // ],
-const POST = (cmd,data) => axios.post('/Sgc'+cmd,data)
-const GET = (url) => axios.get('/Sgc'+url)
+const POST = (cmd,data) => axios.post('/Sgc'+cmd,data);
+const GET = (url) => axios.get('/Sgc'+url);
 const tCode = "I01T";
 const postData = POST('/Response',{
     "tcode": tCode,
@@ -31,7 +31,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                     const data = this.getView().getModel();
                     const btnBack = this.getView().byId("btnBack");
                     const btnNext = this.getView().byId("btnNext");
-                    const btns = [btnBack, btnNext]
+                    const btns = [btnBack, btnNext];
                     btns.forEach( el => {
                         if (el["Fkey"] == event.key){
                             console.log(el);
@@ -42,7 +42,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                 });
                 this.byId("inp").focus()    
             },
-            onNext(){   //get input value -> post - > get
+            onNext(){
                 const that = this;
                 const event = this.getView().byId("btnNext").getText();
                 const inpValue = this.getView().byId("inp").getValue();
@@ -64,6 +64,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                     if(data.scr_type == "S"){
                         that.getView().byId("footer-icon").removeStyleClass("hidden"); 
                         that.getView().byId("footer").removeStyleClass("hidden"); 
+                        that.getView().byId("footer").removeStyleClass("footerRed");
                         that.getView().byId("footer-icon").setSrc("sap-icon://accept");
                         that.getView().byId("footer").addStyleClass("footerGreen");
                         data.value = inpValue;
