@@ -1,9 +1,12 @@
 module.exports = (srv) => {
-
-  const cds = require('@sap/cds')
+ 
+   const cds = require('@sap/cds')
+   
+  // define main core class to handle SMS logic
   
   class sgcCore {
     constructor(iv_tcode) {
+      // constructor save transaction to be processed and prepare first transaction set
       this.tcode = iv_tcode;
       this.setFirstStep();
     }
@@ -22,12 +25,14 @@ module.exports = (srv) => {
 
       // test data
       this.stepno = 10;
-      this.buildScreen();
+      this.buildScreen();        //prepare current data to class attributes to describe screen
     }
 
     processEvent(iv_event, iv_value) {
-      // test process
-
+      // test process - it simulates 3-steps transaction logic
+      // 1. screen is for entering mateial number
+      // 2. screen is for set quantity - there is one test error handling - quantity has to be greather than 100
+      // 3. screen is to confirm process
       this.scr_type = "";
       this.scr_texts = "";
       if (iv_event == "NEXT") {
@@ -62,25 +67,12 @@ module.exports = (srv) => {
           this.stepno -= 10;
         }
       }
-      /*
-        switch (iv_event) {
-          case "NEXT":
-            if (this.stepno < 30) {
-              this.stepno += 10;
-            }
-            break;
-          case "BACK":
-            if (this.stepno > 10) {
-              this.stepno -= 10;
-            }
-            break;
-        }
-        */
       this.buildScreen();
     }
 
     buildScreen() {
       //test process
+      //there are 3 screens, this method prepares text description for each screen based on current transaction step
       this.screen_btn1_text = "BACK";
       this.screen_btn2_text = "NEXT";
       switch (this.stepno) {
@@ -103,6 +95,7 @@ module.exports = (srv) => {
     }
   }
 
+   // service init data
   let go_sgc;
   let gv_screen_title = "Transaction is not running";
   let gv_screen_btn1_text = "";
@@ -110,6 +103,8 @@ module.exports = (srv) => {
   let gv_screen_type = "";
   let gv_screen_texts = "";
 
+  /************************************************************************************ */
+  // Application handling events
   // Receive event from user
   srv.before("CREATE", "Response", async (req) => {
     const resp = req.data;
