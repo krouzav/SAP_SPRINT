@@ -27,7 +27,7 @@
             </VBox>
         </VBox>
         <VBox id="footer" class="footer" width="100%" height="20%" justifyContent="Center" alignItems="Center">
-            <core:Icon id="footer-icon" class="footer-icon" src=""></core:Icon>
+            <core:Icon id="footer-icon" class="footer-icon"></core:Icon>
         </VBox>
     </Page>
 </mvc:View>

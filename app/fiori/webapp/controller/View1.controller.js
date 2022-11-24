@@ -55,7 +55,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                 getNextStep.then(function(result) {
                     const data = result.data.value[0];
                     if(data.scr_type == ""){
-                        alert("empty")
                         that.getView().byId("footer-icon").addStyleClass("hidden"); 
                         that.getView().byId("footer").addStyleClass("hidden"); 
                         data.value = inpValue;
@@ -63,7 +62,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                         oModel.updateBindings();
                     }
                     if(data.scr_type == "S"){
-                        alert("S")
                         that.getView().byId("footer-icon").removeStyleClass("hidden"); 
                         that.getView().byId("footer").removeStyleClass("hidden"); 
                         that.getView().byId("footer-icon").setSrc("sap-icon://accept");
@@ -72,7 +70,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                         oModel.oData = data;  
                         oModel.updateBindings();
                     }if(data.scr_type == "E"){
-                        alert("E")
                         that.getView().byId("txt").setText(data.scr_texts);
                         that.getView().byId("footer-icon").removeStyleClass("hidden"); 
                         that.getView().byId("footer").removeStyleClass("footerGreen");

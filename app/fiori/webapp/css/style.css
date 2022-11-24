@@ -46,7 +46,7 @@ html{
     margin: 1rem;
     font-size: large;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 .txt{
     font-size: 2rem;
