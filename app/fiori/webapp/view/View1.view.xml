@@ -23,11 +23,11 @@
             </HBox>
             <Input id="inp" class="inp" width="100%"/>
             <VBox id="textBox" height="auto" class="txts">
-                <Text class="txt" text="{/scr_texts}"/> 
+                <Label id="txt" class="txt" text="{/scr_texts}"/> 
             </VBox>
         </VBox>
         <VBox id="footer" class="footer" width="100%" height="20%" justifyContent="Center" alignItems="Center">
-            <core:Icon class="icon" src="sap-icon://accept"></core:Icon>
+            <core:Icon id="footer-icon" class="footer-icon" src=""></core:Icon>
         </VBox>
     </Page>
 </mvc:View>
