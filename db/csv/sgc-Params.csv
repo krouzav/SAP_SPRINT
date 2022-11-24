@@ -1,0 +1,4 @@
+tcode;stepno;title;btn1_text;btn2_text
+I01T;10;Enter material;Back;Next
+I01T;20;Enter quantity greather than 100;Back;Next
+I01T;30;Confirm process?;Back;Next
