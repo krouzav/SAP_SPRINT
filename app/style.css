@@ -1,0 +1,26 @@
+.html{
+    box-sizing: border-box;
+}
+.mainCont{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.ahref{
+    top: 50%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    height: auto;
+}
+.imgLink{
+    top: 50%;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}

@@ -1,5 +1,5 @@
 /* Enter your custom styles here */
-.html .{
+.html{
     box-sizing: border-box;
 }
 .label{
@@ -26,11 +26,9 @@
 .sapMBtnInner {
     font-size: 2rem;
 }
-
 .sapUiSizeCompact .sapMBtnInner {
     height: 3.5rem;
 }
-
 .sapUiSizeCompact .sapMBtn {
   height: 4rem; 
   width: 13rem !important;
@@ -51,6 +49,10 @@
 .txt{
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', sans-serif;
+    color: rgb(85,107,130);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto; 
 }
 .sapMInputBaseInner {
     font-size: 2rem;
@@ -62,9 +64,7 @@
     line-height: 1rem;
     height: 4rem;
     padding: 1rem;
-    
 }
-
 .sapUiSizeCompact .sapMInputBaseContentWrapper {
     height: 3rem;
     background-color: #e7f2b6;

@@ -21,30 +21,27 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
         "use strict";
         return Controller.extend("ns.fiori.controller.View1", {
             onInit: function () {
-                const that = this
+                this.getView().byId("inp").focus();
+                const that = this;
                 getData.then(function(result) {
                     const data = result.data.value[0];
                     oModel = new JSONModel(data);
                     that.getView().setModel(oModel);
                 }); 
-                window.addEventListener("keydown", (event) => {
-                    const data = this.getView().getModel();
-                    const btnBack = this.getView().byId("btnBack");
-                    const btnNext = this.getView().byId("btnNext");
-                    const btns = [btnBack, btnNext];
-                    btns.forEach( el => {
-                        if (el["Fkey"] == event.key){
-                            console.log(el);
-                            event.preventDefault();
-                            this.sendToDab(el["Event"], this);                     
-                        }               
-                    })
+                document.addEventListener("keydown", function(event){
+                    if(event.key == "F3"){
+                        event.preventDefault();
+                        that.onBack();
+                    }
+                    if(event.key == "F4"){
+                        event.preventDefault();
+                        that.onNext();
+                    }
                 });
-                this.byId("inp").focus()    
             },
             onNext(){
                 const that = this;
-                const event = this.getView().byId("btnNext").getText();
+                const event = this.getView().byId("btnNext").getText().slice(3);
                 const inpValue = this.getView().byId("inp").getValue();
                 const postNewData = POST('/Response',{
                     "tcode": tCode,
@@ -88,7 +85,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                 this.getView().byId("footer-icon").addStyleClass("hidden"); 
                 this.getView().byId("footer").addStyleClass("hidden"); 
                 const that = this;
-                const event = this.getView().byId("btnBack").getText();
+                const event = this.getView().byId("btnBack").getText().slice(3);
                 const inpValue = this.getView().byId("inp").getValue();
                 const postNewData = POST('/Response',{
                     "tcode": tCode,

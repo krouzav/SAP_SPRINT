@@ -12,15 +12,15 @@ module.exports = (srv) => {
     }
 
     setFirstStep() {
-      //KROV TEST
-      let params = SELECT.from('sgc.Params').where({ tcode:'I01T' })
+      // //KROV TEST
+      // let params = SELECT.from('sgc.Params').where({ tcode:'I01T' })
 
-      let paramsData = cds.run(params)
+      // let paramsData = cds.run(params)
 
-      paramsData.then(function(result) {
-        const data = result;
-        console.log(data[0].tcode)
-    });
+      // paramsData.then(function(result) {
+      //   const data = result;
+      //   console.log(data[0].tcode)
+    //});
     //END TEST DATA 
 
       // test data
