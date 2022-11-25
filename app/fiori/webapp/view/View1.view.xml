@@ -11,19 +11,19 @@
                     <Title id="title" text="{i18n>title}" />
                 </contentMiddle>
                 <contentRight>
-                    <Image id="logo" src="./images/aimtec_logo.png" height="70%" />
+                    <Image id="logo" src="./images/aimtec_logo.png" width="80%" height="70%" />
                 </contentRight>
             </Bar>
         </customHeader>
         <VBox id="main" width="100%" height="80%">
         <Label id="label" class="label" text="{/title}"/>
             <HBox id="btnBox" class="btnBox" width="100%" height="auto" justifyContent="SpaceAround">
-                <Button class="btns" id="btnBack" text="{/btn1_text}" press="onBack" width="4rem"/> <!-- texty od stepana-->
-                <Button class="btns" id="btnNext" text="{/btn2_text}" press="onNext" width="4rem"/>
+                <Button class="btns" id="btnBack" text="F3-{/btn1_text}" press="onBack" width="4rem"/> <!-- texty od stepana-->
+                <Button class="btns" id="btnNext" text="F4-{/btn2_text}" press="onNext" width="4rem"/>
             </HBox>
             <Input id="inp" class="inp" width="100%"/>
             <VBox id="textBox" width="90%" height="auto" class="txts">
-                <Label id="txt" class="txt" text="{/scr_texts}"/> 
+                <Text id="txt" class="txt" text="{/scr_texts}"/> 
             </VBox>
         </VBox>
         <VBox id="footer" class="footer" width="100%" height="20%" justifyContent="Center" alignItems="Center">
