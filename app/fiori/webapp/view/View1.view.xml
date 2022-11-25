@@ -16,7 +16,7 @@
             </Bar>
         </customHeader>
         <VBox id="main" width="100%" height="80%">
-        <Label id="label" class="label" text="{/title}"/>
+        <Text id="label" class="label" text="{/title}"/>
             <HBox id="btnBox" class="btnBox" width="100%" height="auto" justifyContent="SpaceAround">
                 <Button class="btns" id="btnBack" text="F3-{/btn1_text}" press="onBack" width="4rem"/> <!-- texty od stepana-->
                 <Button class="btns" id="btnNext" text="F4-{/btn2_text}" press="onNext" width="4rem"/>
