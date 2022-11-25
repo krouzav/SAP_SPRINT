@@ -98,7 +98,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/odata/v4/ODataModel", 
                     oModel.oData = data;  
                     oModel.updateBindings();
                 })
-
             },
         });
     });

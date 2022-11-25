@@ -6,6 +6,7 @@
     padding: 0.5rem;
     font-size: xx-large;
     font-family: 'Franklin Gothic Medium', sans-serif;
+    color: #556b82;
 }
 .btnBox{
     margin-top: 1rem;
@@ -49,7 +50,7 @@
 .txt{
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', sans-serif;
-    color: rgb(85,107,130);
+    color: #556b82;
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto; 
